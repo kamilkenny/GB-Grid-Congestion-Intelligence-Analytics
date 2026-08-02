@@ -216,3 +216,40 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Environment variables and credentials
+.env
+.env.local
+
+# Colab and Jupyter
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# Raw and processed data
+data/raw/*
+data/processed/*
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+
+# Generated results
+results/*
+!results/.gitkeep
+
+# Trained models
+models/*
+!models/.gitkeep
+
+# Database and temporary files
+*.db
+*.sqlite
+*.duckdb
+*.parquet
+*.joblib
+*.pkl
+
+# Logs
+*.log
+
+# Operating-system files
+.DS_Store
+Thumbs.db

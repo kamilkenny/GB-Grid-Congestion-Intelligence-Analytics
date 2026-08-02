@@ -1,0 +1,13 @@
+pandas
+numpy
+requests
+pyarrow
+PyYAML
+SQLAlchemy
+pyodbc
+plotly
+streamlit
+scikit-learn
+joblib
+geopandas
+shapely

@@ -1,0 +1,31 @@
+project:
+  name: GB Grid Congestion Intelligence Platform
+  repository: gb-grid-congestion-intelligence
+  region: Great Britain
+  timezone: Europe/London
+
+data_sources:
+  day_ahead_constraint_flows:
+    provider: NESO
+    enabled: true
+
+  thermal_constraint_costs:
+    provider: NESO
+    enabled: true
+
+  etys_boundary_geography:
+    provider: NESO
+    enabled: true
+
+database:
+  platform: Azure SQL Database
+  schema: dbo
+
+modelling:
+  enabled: false
+  target: high_thermal_constraint_cost_event
+  maximum_initial_models: 3
+
+dashboard:
+  framework: Streamlit
+  deployment_platform: Microsoft Azure
