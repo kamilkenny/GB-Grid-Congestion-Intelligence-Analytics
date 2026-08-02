@@ -1,0 +1,108 @@
+{
+    "project": "GB Grid Congestion Intelligence Analytics",
+    "environment_checked_at_utc": "2026-08-02T14:25:37.720565+00:00",
+    "python_version": "3.12.13",
+    "platform": "Linux-6.6.122+-x86_64-with-glibc2.35",
+    "packages": [
+        {
+            "package": "pandas",
+            "status": "Passed",
+            "version": "2.2.2"
+        },
+        {
+            "package": "numpy",
+            "status": "Passed",
+            "version": "2.0.2"
+        },
+        {
+            "package": "requests",
+            "status": "Passed",
+            "version": "2.32.4"
+        },
+        {
+            "package": "pyarrow",
+            "status": "Passed",
+            "version": "18.1.0"
+        },
+        {
+            "package": "PyYAML",
+            "status": "Passed",
+            "version": "6.0.3"
+        },
+        {
+            "package": "SQLAlchemy",
+            "status": "Passed",
+            "version": "2.0.51"
+        },
+        {
+            "package": "pyodbc",
+            "status": "Passed",
+            "version": "Version not exposed"
+        },
+        {
+            "package": "plotly",
+            "status": "Passed",
+            "version": "5.24.1"
+        },
+        {
+            "package": "streamlit",
+            "status": "Passed",
+            "version": "1.60.0"
+        },
+        {
+            "package": "scikit-learn",
+            "status": "Passed",
+            "version": "1.6.1"
+        },
+        {
+            "package": "joblib",
+            "status": "Passed",
+            "version": "1.5.3"
+        },
+        {
+            "package": "geopandas",
+            "status": "Passed",
+            "version": "1.1.4"
+        },
+        {
+            "package": "shapely",
+            "status": "Passed",
+            "version": "2.1.2"
+        }
+    ],
+    "project_modules": [
+        {
+            "module": "src",
+            "status": "Passed"
+        },
+        {
+            "module": "src.ingestion",
+            "status": "Passed"
+        },
+        {
+            "module": "src.validation",
+            "status": "Passed"
+        },
+        {
+            "module": "src.transformation",
+            "status": "Passed"
+        },
+        {
+            "module": "src.features",
+            "status": "Passed"
+        },
+        {
+            "module": "src.modelling",
+            "status": "Passed"
+        },
+        {
+            "module": "src.dashboard",
+            "status": "Passed"
+        },
+        {
+            "module": "tests",
+            "status": "Passed"
+        }
+    ],
+    "odbc_drivers": []
+}

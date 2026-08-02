@@ -1,0 +1,13 @@
+pandas==2.2.2
+numpy==2.0.2
+requests==2.32.4
+pyarrow==18.1.0
+PyYAML==6.0.3
+SQLAlchemy==2.0.51
+pyodbc==5.3.0
+plotly==5.24.1
+streamlit==1.60.0
+scikit-learn==1.6.1
+joblib==1.5.3
+geopandas==1.1.4
+shapely==2.1.2
