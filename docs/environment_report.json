@@ -1,6 +1,6 @@
 {
     "project": "GB Grid Congestion Intelligence Analytics",
-    "environment_checked_at_utc": "2026-08-02T14:25:37.720565+00:00",
+    "environment_checked_at_utc": "2026-08-02T19:21:01.087570+00:00",
     "python_version": "3.12.13",
     "platform": "Linux-6.6.122+-x86_64-with-glibc2.35",
     "packages": [

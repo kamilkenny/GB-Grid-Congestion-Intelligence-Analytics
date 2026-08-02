@@ -36,4 +36,11 @@ The platform will:
 
 ## Project status
 
-Stage 1: Repository and development environment setup.
+Stage 1 completed:
+
+- repository and project structure created;
+- Python environment validated;
+- package versions frozen;
+- project synchronised with GitHub.
+
+Current stage: Stage 2 — NESO data discovery and data dictionary.
