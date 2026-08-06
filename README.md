@@ -43,7 +43,7 @@ Stage 1 completed:
 - package versions frozen;
 - project synchronised with GitHub.
 
-Current stage: Stage 6C, cloud application integration and Azure App Service deployment.
+Project status: production dashboard deployed to Azure App Service with GitHub Actions continuous deployment.
 
 ## Production cloud application
 
@@ -89,3 +89,38 @@ The classifier remains a research dashboard candidate and is not approved for pr
 ### Project author
 
 Model development and dashboard created by Kamil Ridwan Kehinde.
+
+<!-- LIVE_AZURE_DEPLOYMENT_START -->
+
+## Live Azure deployment
+
+The completed Great Britain Grid Congestion and Constraint Cost Intelligence Dashboard is publicly deployed on Microsoft Azure App Service.
+
+Live application:
+
+    https://gb-grid-congestion-kamil-898341.azurewebsites.net
+
+Health endpoint:
+
+    https://gb-grid-congestion-kamil-898341.azurewebsites.net/health
+
+### Production architecture
+
+* Plotly Dash and Flask application
+* Azure SQL Database data platform
+* Eleven approved analytical SQL views
+* Azure App Service Linux deployment
+* Gunicorn production server
+* GitHub Actions continuous deployment
+* OpenID Connect authentication
+* Restricted Azure SQL firewall access
+
+### Deployment behaviour
+
+Commits affecting the app_service directory or the deployment workflow automatically trigger validation and deployment from the main branch.
+
+The dashboard is live and database connected. The underlying source ingestion process remains batch based rather than continuously streaming.
+
+The application is a research and decision support platform and is not an official live operational warning system.
+
+<!-- LIVE_AZURE_DEPLOYMENT_END -->
