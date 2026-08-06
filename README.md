@@ -126,17 +126,7 @@ The application is a research and decision support platform and is not an offici
 <!-- LIVE_AZURE_DEPLOYMENT_END -->
 
 
-# Great Britain Grid Congestion and Constraint Cost Intelligence Platform
 
-An Azure-based power-system analytics platform integrating NESO
-day-ahead congestion indicators, realised thermal constraint costs,
-machine-learning evaluation and Electricity Ten Year Statement
-planning evidence.
-
-## Live application
-
-**Azure dashboard:**  
-https://gb-grid-congestion-kamil-898341.azurewebsites.net
 
 ## Project overview
 
