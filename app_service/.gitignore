@@ -1,0 +1,41 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Secrets and environment variables
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Logs and local artefacts
+*.log
+logs/
+.ipynb_checkpoints/
+*.ipynb
+
+# Data and model artefacts
+data/
+checkpoints/
+outputs/
+*.parquet
+*.joblib
+*.pkl
+*.pickle
+
+# Editors and operating systems
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Azure generated files
+.azure/

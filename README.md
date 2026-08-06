@@ -43,4 +43,49 @@ Stage 1 completed:
 - package versions frozen;
 - project synchronised with GitHub.
 
-Current stage: Stage 2 — NESO data discovery and data dictionary.
+Current stage: Stage 6C, cloud application integration and Azure App Service deployment.
+
+## Production cloud application
+
+The completed application is a six page interactive Great Britain grid congestion and thermal constraint cost intelligence dashboard.
+
+It connects directly to eleven approved analytical views in Azure SQL Database and combines forecast congestion exposure, realised thermal constraint costs, historical machine learning evidence and Electricity Ten Year Statement planning projections.
+
+### Application capabilities
+
+* Executive congestion and cost overview
+* Historical thermal constraint cost analysis
+* Forecast stress and realised cost relationship analysis
+* Historical high cost risk score evidence
+* Electricity Ten Year Statement planning context and scenario comparison
+* Data quality, pipeline and model governance reporting
+
+### Cloud architecture
+
+NESO open data and project source files are processed through the Python data engineering workflow.
+
+The resulting production tables and analytical views are stored in Azure SQL Database.
+
+The Plotly Dash and Flask application reads the approved views and is prepared for deployment to Azure App Service.
+
+### Application location
+
+The production deployment source is stored in:
+
+    app_service/
+
+### Data freshness
+
+The dashboard is live and connected to Azure SQL Database. The current source ingestion process is batch based rather than continuously streaming.
+
+The platform is designed for research, planning and decision support. It is not an official live operational warning system.
+
+### Model governance
+
+The historical high thermal constraint cost risk score is an uncalibrated empirical ranking and is not a literal event probability.
+
+The classifier remains a research dashboard candidate and is not approved for production operational alerting.
+
+### Project author
+
+Model development and dashboard created by Kamil Ridwan Kehinde.
