@@ -20,7 +20,7 @@ APP_TITLE = (
 APP_SUBTITLE = (
     "An interactive decision support platform combining day ahead "
     "forecast congestion exposure, realised thermal constraint costs, "
-    "historical machine learning evidence and Electricity Ten Year "
+    "historical predictive evidence and Electricity Ten Year "
     "Statement planning context."
 )
 
@@ -749,7 +749,7 @@ def platform_information_strip():
                             "indicators, historical cost patterns, model evidence and Electricity "
                             "Ten Year Statement planning projections so users can compare periods, "
                             "identify important events and review the evidence behind the results. "
-                            "It supports research and planning, not live operational warning."
+                            "It supports analysis and planning, not live operational warning."
                         ),
                         className="platform-note-text",
                     ),
