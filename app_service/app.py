@@ -24,6 +24,9 @@ APP_SUBTITLE = (
     "Statement planning context."
 )
 
+
+
+MODEL_USAGE_NOTICE = "The model demonstrated strong risk ranking and useful event detection, but it remains an analytical research decision support model and is not yet approved for operational use."
 PAGE_IDS = [
     "executive_overview",
     "congestion_cost_trends",
@@ -360,7 +363,7 @@ def build_executive_kpis(
         components.metric_card(
             title="Historically scored days",
             value=components.format_integer(risk_scores.notna().sum()),
-            subtitle="Days containing stored research classifier risk scores.",
+            subtitle="Days containing stored predictive classifier risk scores.",
             icon="◎",
             tone="blue",
         ),
@@ -731,7 +734,7 @@ def platform_information_strip():
             html.Div(
                 [
                     html.Div("Platform purpose", className="platform-information-label"),
-                    html.Div("Research and decision support", className="platform-information-value"),
+                    html.Div("Analytical decision support", className="platform-information-value"),
                 ],
                 className="platform-information-item",
             ),
@@ -1354,7 +1357,7 @@ app.layout = html.Div(
                     title=APP_TITLE,
                     subtitle=APP_SUBTITLE,
                     pipeline_text="Azure SQL analytical views ready",
-                    platform_text="Research and decision support",
+                    platform_text="Analytical decision support",
                     latest_date_text=f"Latest data {latest_date_text}",
                 ),
                 platform_information_strip(),
@@ -1369,7 +1372,7 @@ app.layout = html.Div(
                 quality_page(),
                 html.Div(
                     (
-                        "Research and decision support platform. Not an official operational alerting system."
+                        "Analytical decision support platform. Not an official operational alerting system."
                     ),
                     className="dashboard-footer-minimal",
                 ),

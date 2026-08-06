@@ -1108,3 +1108,192 @@ textarea {
         grid-column: 1;
     }
 }
+
+/* STAGE_7A1_DARK_PURPLE_THEME */
+
+:root {
+    --platform-purple-950: #21072F;
+    --platform-purple-900: #2B0A3D;
+    --platform-purple-800: #3D1459;
+    --platform-purple-700: #551B75;
+    --platform-purple-600: #6D2A91;
+    --platform-purple-400: #A878D2;
+    --platform-purple-200: #E3D2F2;
+    --platform-purple-100: #F3EBFA;
+    --platform-white: #FFFFFF;
+}
+
+.hero-header {
+    position: relative;
+    overflow: hidden;
+    background:
+        radial-gradient(
+            circle at 84% 18%,
+            rgba(168, 120, 210, 0.30),
+            transparent 34%
+        ),
+        radial-gradient(
+            circle at 14% 88%,
+            rgba(109, 42, 145, 0.34),
+            transparent 38%
+        ),
+        linear-gradient(
+            128deg,
+            #21072F 0%,
+            #2B0A3D 34%,
+            #3D1459 68%,
+            #551B75 100%
+        ) !important;
+    border:
+        1px solid
+        rgba(227, 210, 242, 0.20);
+    box-shadow:
+        0 24px 60px
+        rgba(33, 7, 47, 0.28);
+}
+
+.hero-header::before {
+    background:
+        radial-gradient(
+            circle,
+            rgba(255, 255, 255, 0.15),
+            transparent 68%
+        ) !important;
+}
+
+.hero-header::after {
+    background:
+        linear-gradient(
+            110deg,
+            transparent,
+            rgba(255, 255, 255, 0.08),
+            transparent
+        ) !important;
+}
+
+.hero-title,
+.hero-header h1,
+.hero-header h2 {
+    color: #FFFFFF !important;
+    text-shadow:
+        0 2px 14px
+        rgba(0, 0, 0, 0.20);
+}
+
+.hero-subtitle,
+.hero-description {
+    color:
+        rgba(255, 255, 255, 0.88)
+        !important;
+}
+
+.hero-eyebrow,
+.hero-platform-label {
+    color: #E3D2F2 !important;
+}
+
+.hero-status-pill,
+.hero-badge,
+.pipeline-pill {
+    color: #FFFFFF !important;
+    background:
+        rgba(255, 255, 255, 0.12)
+        !important;
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.22)
+        !important;
+    backdrop-filter:
+        blur(10px);
+}
+
+.navigation-button {
+    border-color: #E3D2F2;
+}
+
+.navigation-button:hover {
+    color: #FFFFFF;
+    background: #551B75;
+    border-color: #551B75;
+}
+
+.navigation-button.active,
+.navigation-button--active {
+    color: #FFFFFF !important;
+    background:
+        linear-gradient(
+            135deg,
+            #3D1459,
+            #6D2A91
+        ) !important;
+    border-color: #551B75 !important;
+    box-shadow:
+        0 8px 20px
+        rgba(61, 20, 89, 0.22);
+}
+
+.platform-information-strip {
+    border-color: #E3D2F2;
+    background:
+        linear-gradient(
+            135deg,
+            #FFFFFF,
+            #F8F3FC
+        );
+}
+
+.platform-information-label,
+.platform-note-title,
+.platform-credit {
+    color: #551B75 !important;
+}
+
+.platform-information-value {
+    color: #2B0A3D !important;
+}
+
+.platform-explanatory-note {
+    border-left-color: #551B75 !important;
+    background: #F3EBFA !important;
+}
+
+.section-kicker,
+.page-eyebrow,
+.card-eyebrow {
+    color: #6D2A91 !important;
+}
+
+.primary-action-button,
+.refresh-button {
+    color: #FFFFFF !important;
+    background:
+        linear-gradient(
+            135deg,
+            #3D1459,
+            #6D2A91
+        ) !important;
+    border-color: #551B75 !important;
+}
+
+.primary-action-button:hover,
+.refresh-button:hover {
+    background:
+        linear-gradient(
+            135deg,
+            #2B0A3D,
+            #551B75
+        ) !important;
+}
+
+a {
+    color: #551B75;
+}
+
+a:hover {
+    color: #2B0A3D;
+}
+
+/*
+This palette is original to this project.
+No external organisation logo or ownership mark is used.
+*/
