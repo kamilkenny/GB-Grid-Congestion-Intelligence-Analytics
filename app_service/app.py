@@ -20,13 +20,16 @@ APP_TITLE = (
 APP_SUBTITLE = (
     "An interactive decision support platform combining day ahead "
     "forecast congestion exposure, realised thermal constraint costs, "
-    "historical predictive evidence and Electricity Ten Year "
-    "Statement planning context."
+    "predictive risk evidence and Electricity Ten Year Statement "
+    "planning insights."
 )
 
+MODEL_USAGE_NOTICE = (
+    "The model demonstrated strong risk ranking and useful event detection, "
+    "but it remains an analytical research decision support model and is "
+    "not yet approved for operational use."
+)
 
-
-MODEL_USAGE_NOTICE = "The model demonstrated strong risk ranking and useful event detection, but it remains an analytical research decision support model and is not yet approved for operational use."
 PAGE_IDS = [
     "executive_overview",
     "congestion_cost_trends",
@@ -40,7 +43,7 @@ PAGE_LABELS = {
     "executive_overview": "Executive Overview",
     "congestion_cost_trends": "Congestion and Cost",
     "stress_cost_relationship": "Stress and Cost",
-    "historical_ml_evidence": "Historical Machine Learning",
+    "historical_ml_evidence": "Predictive Risk Insights",
     "etys_planning_context": "Electricity Ten Year Statement Context",
     "quality_governance": "Quality and Governance",
 }
@@ -363,7 +366,7 @@ def build_executive_kpis(
         components.metric_card(
             title="Historically scored days",
             value=components.format_integer(risk_scores.notna().sum()),
-            subtitle="Days containing stored predictive classifier risk scores.",
+            subtitle="Days containing stored predictive risk scores.",
             icon="◎",
             tone="blue",
         ),
@@ -437,11 +440,11 @@ def build_latest_insight(daily_dataframe: pd.DataFrame):
                 icon="△",
             ),
             components.insight_card(
-                title="Historical model evidence",
+                title="Predictive risk evidence",
                 body=f"The stored high thermal constraint cost risk score is {risk_text}.",
                 recommendation=(
-                    "The score is an uncalibrated empirical ranking and is not approved "
-                    "for operational alerting."
+                    "Use the score as an analytical ranking indicator rather than a "
+                    "calibrated probability or operational alert."
                 ),
                 tone="planning",
                 icon="◎",
@@ -471,11 +474,11 @@ def build_pipeline_cards(
             tone="teal",
         ),
         components.metric_card(
-            title="Historical model scores",
+            title="Predictive risk records",
             value=components.format_integer(
                 pipeline_row.get("current_historical_model_score_record_count")
             ),
-            subtitle="Stored historical classifier evaluation records.",
+            subtitle="Stored historical predictive evaluation records.",
             icon="◎",
             tone="blue",
         ),
@@ -734,7 +737,10 @@ def platform_information_strip():
             html.Div(
                 [
                     html.Div("Platform purpose", className="platform-information-label"),
-                    html.Div("Analytical decision support", className="platform-information-value"),
+                    html.Div(
+                        "Analytical decision support and planning intelligence",
+                        className="platform-information-value",
+                    ),
                 ],
                 className="platform-information-item",
             ),
@@ -743,18 +749,20 @@ def platform_information_strip():
                     html.Div("What this dashboard does", className="platform-note-title"),
                     html.P(
                         (
-                            "This dashboard helps stakeholders see how forecast congestion "
-                            "pressure on Great Britain's electricity network relates to "
-                            "realised thermal constraint costs. It combines day ahead exposure "
-                            "indicators, historical cost patterns, model evidence and Electricity "
-                            "Ten Year Statement planning projections so users can compare periods, "
-                            "identify important events and review the evidence behind the results. "
-                            "It supports analysis and planning, not live operational warning."
+                            "This dashboard helps stakeholders understand how forecast "
+                            "congestion pressure across Great Britain's electricity network "
+                            "relates to realised thermal constraint costs. It combines day "
+                            "ahead congestion indicators, historical cost patterns, predictive "
+                            "model evidence and Electricity Ten Year Statement planning "
+                            "projections. Users can compare periods, identify important events "
+                            "and review the evidence supporting the results. The platform "
+                            "supports analysis, planning and informed decision making. It is "
+                            "independently developed and is not an official NESO platform."
                         ),
                         className="platform-note-text",
                     ),
                     html.Div(
-                        "Model development and dashboard created by Kamil Ridwan",
+                        "Independently developed by Kamil Ridwan",
                         className="platform-credit",
                     ),
                 ],
@@ -1033,20 +1041,51 @@ def historical_ml_page():
     return html.Main(
         [
             components.section_header(
-                "MODEL EVIDENCE AND GOVERNANCE",
-                "Historical high cost risk ranking evidence",
+                "PREDICTIVE RISK INSIGHTS",
+                "Historical high cost risk ranking performance",
                 (
-                    "Review historical classifier scores, classification outcomes, evaluation "
-                    "metrics and the formal deployment decision."
+                    "Review the strongest decision relevant evidence from the locked "
+                    "chronological evaluation, together with the historical risk timeline "
+                    "and observed event rates across score bands."
                 ),
             ),
             components.methodology_notice(
-                "Research score only",
-                (
-                    "The high thermal constraint cost risk score is an uncalibrated empirical "
-                    "ranking. It is not a literal probability and is not approved for operational alerting."
-                ),
-                "critical",
+                "Model use status",
+                MODEL_USAGE_NOTICE,
+                "information",
+            ),
+            html.Div(
+                [
+                    components.metric_card(
+                        title="Risk ranking performance",
+                        value="0.878",
+                        subtitle="ROC AUC on the locked chronological test period.",
+                        icon="◎",
+                        tone="purple",
+                    ),
+                    components.metric_card(
+                        title="Precision lift",
+                        value="4.89×",
+                        subtitle="Average precision relative to the baseline event rate.",
+                        icon="↗",
+                        tone="teal",
+                    ),
+                    components.metric_card(
+                        title="High cost events detected",
+                        value="71.4%",
+                        subtitle="Recall achieved for high thermal constraint cost events.",
+                        icon="✓",
+                        tone="green",
+                    ),
+                    components.metric_card(
+                        title="Evaluation design",
+                        value="Locked test",
+                        subtitle="Chronological test period evaluated without post test tuning.",
+                        icon="▦",
+                        tone="blue",
+                    ),
+                ],
+                className="metric-grid",
             ),
             html.Div(
                 [
@@ -1062,18 +1101,6 @@ def historical_ml_page():
                             placeholder="All evaluation contexts",
                         ),
                     ),
-                    components.filter_group(
-                        "Classification outcome",
-                        dcc.Dropdown(
-                            id="classification-result-filter",
-                            options=dropdown_options(
-                                FILTER_OPTIONS["model"].get("classification_results", [])
-                            ),
-                            value=[],
-                            multi=True,
-                            placeholder="All outcomes",
-                        ),
-                    ),
                 ],
                 className="filter-panel filter-grid",
             ),
@@ -1081,26 +1108,25 @@ def historical_ml_page():
                 "historical-risk-timeline",
                 visuals.historical_risk_timeline_figure(initial_model_scores),
             ),
-            html.Div(
-                [
-                    components.chart_card(
-                        "classification-confusion-matrix",
-                        visuals.classification_confusion_matrix_figure(initial_model_scores),
-                    ),
-                    components.chart_card(
-                        "score-band-event-rate",
-                        visuals.score_band_event_rate_figure(initial_model_scores),
-                    ),
-                ],
-                className="equal-column-grid",
-            ),
             components.chart_card(
-                "model-metric-comparison",
-                visuals.model_metric_comparison_figure(initial_model_metrics),
+                "score-band-event-rate",
+                visuals.score_band_event_rate_figure(initial_model_scores),
             ),
-            html.Div(
-                build_governance_panel(INITIAL_DATA["model_governance"]),
-                id="model-governance-panel",
+            components.explanation_panel(
+                "A historical ranking of high thermal constraint cost risk and the observed "
+                "event rate across score bands.",
+                (
+                    "The evidence shows that higher model scores were associated with a "
+                    "greater concentration of high cost events in the locked evaluation period."
+                ),
+                (
+                    "Use the timeline to compare score movement with realised outcomes, then "
+                    "use the score band chart to assess whether higher bands captured more events."
+                ),
+                (
+                    "Use these results as analytical decision support. The score is a ranking "
+                    "indicator rather than a calibrated probability or operational alert."
+                ),
             ),
         ],
         id="page-historical_ml_evidence",
@@ -1259,7 +1285,7 @@ def quality_page():
                     components.methodology_notice(
                         "Model use restriction",
                         (
-                            "The classifier is retained as a research candidate and is not approved for production operational alerting."
+                            "The predictive model supports analytical decision making and is not yet approved for operational use."
                         ),
                         "critical",
                     ),
@@ -1372,7 +1398,7 @@ app.layout = html.Div(
                 quality_page(),
                 html.Div(
                     (
-                        "Analytical decision support platform. Not an official operational alerting system."
+                        "Analytical decision support platform, not an official NESO operational alerting system."
                     ),
                     className="dashboard-footer-minimal",
                 ),
@@ -1503,28 +1529,17 @@ def update_operational_intelligence(
 
 @app.callback(
     Output("historical-risk-timeline", "figure"),
-    Output("classification-confusion-matrix", "figure"),
     Output("score-band-event-rate", "figure"),
-    Output("model-metric-comparison", "figure"),
-    Output("model-governance-panel", "children"),
     Input("model-context-filter", "value"),
-    Input("classification-result-filter", "value"),
 )
-def update_model_evidence(evaluation_contexts, classification_results):
+def update_model_evidence(evaluation_contexts):
     model_scores_dataframe = database.load_model_scores(
         evaluation_contexts=evaluation_contexts,
-        classification_results=classification_results,
+        classification_results=[],
     )
-    model_metrics_dataframe = database.load_model_metrics(
-        evaluation_contexts=evaluation_contexts
-    )
-    governance_dataframe = database.load_model_governance()
     return (
         visuals.historical_risk_timeline_figure(model_scores_dataframe),
-        visuals.classification_confusion_matrix_figure(model_scores_dataframe),
         visuals.score_band_event_rate_figure(model_scores_dataframe),
-        visuals.model_metric_comparison_figure(model_metrics_dataframe),
-        build_governance_panel(governance_dataframe),
     )
 
 
