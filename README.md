@@ -22,7 +22,7 @@ The platform will:
 
 - Day-Ahead Constraint Flows and Limits
 - Thermal Constraint Costs
-- ETYS GB Transmission System Boundaries
+- Electricity Ten Year Statement GB Transmission System Boundaries
 
 ## Technology stack
 
