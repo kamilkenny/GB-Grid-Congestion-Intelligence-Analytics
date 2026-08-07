@@ -1,4 +1,7 @@
 
+<img width="1672" height="941" alt="cost constraint dashboard" src="https://github.com/user-attachments/assets/b84d9036-afbc-4d8d-97f3-9e1eecf5b472" />
+
+
 # Great Britain Grid Congestion and Constraint Cost Intelligence Platform
 
 An Azure-based power-system analytics platform integrating NESO
@@ -174,6 +177,7 @@ The application is a research and decision support platform and is not an offici
 <!-- LIVE_AZURE_DEPLOYMENT_END -->
 
 
+<img width="719" height="327" alt="GRID" src="https://github.com/user-attachments/assets/5738ee8f-395e-46b7-bcf9-cc51825c9085" />
 
 
 ## Project overview
