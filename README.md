@@ -14,7 +14,11 @@ planning evidence.
 **Azure dashboard:**  
 https://gb-grid-congestion-kamil-898341.azurewebsites.net
 
-## Project overview
+## Full project article on Medium:
+
+https://medium.com/@kamilkenny22/from-open-grid-data-to-azure-building-a-great-britain-grid-congestion-and-constraint-cost-e5c4e90a54a0?postPublishedType=initial
+
+##  General overview
 
 This project examines how forecast congestion pressure across Great
 Britain's electricity transmission network relates to realised thermal
