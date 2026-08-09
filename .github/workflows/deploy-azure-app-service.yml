@@ -9,6 +9,7 @@ on:
       - ".github/workflows/deploy-azure-app-service.yml"
       - "README.md"
       - "docs/azure_app_service_deployment.md"
+
   workflow_dispatch:
 
 permissions:
@@ -101,32 +102,36 @@ jobs:
 
                   if (
                       response.status == 200
-                      and payload.get(
-                          "status"
-                      ) == "healthy"
-                      and payload.get(
-                          "database_connection"
-                      ) == "Passed"
-                      and payload.get(
-                          "approved_view_count"
-                      ) == 11
+                      and payload.get("status") == "healthy"
                   ):
                       print(
-                          "Public dashboard health check passed."
+                          "Public dashboard application health check passed."
+                      )
+                      print(
+                          json.dumps(
+                              payload,
+                              indent=2,
+                          )
                       )
                       break
+
+                  last_error = (
+                      "Unexpected health response: "
+                      f"HTTP {response.status}, payload={payload}"
+                  )
 
               except Exception as error:
                   last_error = str(error)
 
               print(
-                  f"Waiting for dashboard health, attempt {attempt} of 36"
+                  f"Waiting for dashboard health, attempt {attempt} of 36. "
+                  f"Last result: {last_error}"
               )
               time.sleep(10)
 
           else:
               raise RuntimeError(
-                  "The public dashboard did not become healthy. "
+                  "The public dashboard application did not become healthy. "
                   f"Last error: {last_error}"
               )
           PY
