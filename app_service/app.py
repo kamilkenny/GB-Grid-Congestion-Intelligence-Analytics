@@ -1,5 +1,5 @@
 from __future__ import annotations
-
+from pathlib import Path
 import os
 from typing import Any, Iterable, Optional
 
@@ -10,6 +10,23 @@ from flask import jsonify
 import components
 import database
 import visuals
+
+
+# ============================================================
+# Persistent dashboard fallback cache
+# ============================================================
+
+CACHE_DIRECTORY = Path(
+    os.getenv(
+        "DASHBOARD_CACHE_DIRECTORY",
+        "/home/data/gb_grid_cache",
+    )
+)
+
+CACHE_DIRECTORY.mkdir(
+    parents=True,
+    exist_ok=True,
+)
 
 
 APP_TITLE = (
