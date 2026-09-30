@@ -11,7 +11,7 @@ planning evidence.
 
 ## Live application
 
-**Azure dashboard:**  
+**Azure Web deployed dashboard:**  
 https://gb-grid-congestion-kamil-898341.azurewebsites.net
 
 ## Full project article on Medium:
