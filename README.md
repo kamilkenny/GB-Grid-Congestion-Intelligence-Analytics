@@ -1,4 +1,7 @@
 
+<img width="1232" height="882" alt="neso" src="https://github.com/user-attachments/assets/c815115f-bd7c-4305-9fbd-1eadfb540b54" />
+
+
 <img width="1672" height="941" alt="cost constraint dashboard" src="https://github.com/user-attachments/assets/b84d9036-afbc-4d8d-97f3-9e1eecf5b472" />
 
 
